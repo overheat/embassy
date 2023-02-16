@@ -51,7 +51,7 @@ async fn main_task(spawner: Spawner) {
     let config = if opts.static_ip {
         Config::Static(embassy_net::StaticConfig {
             address: Ipv4Cidr::new(Ipv4Address::new(192, 168, 69, 1), 24),
-            dns_servers: Vec::from_slice(&[Ipv4Address::new(8, 8, 4, 4).into(), Ipv4Address::new(8, 8, 8, 8).into()])
+            dns_servers: Vec::from_slice(&[Ipv4Address::new(114, 114, 114, 114).into()])
                 .unwrap(),
             gateway: Some(Ipv4Address::new(192, 168, 69, 100)),
         })
